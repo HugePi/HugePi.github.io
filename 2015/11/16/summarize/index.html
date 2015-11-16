@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>稍微扯一扯我学到的爬虫知识 | DoKi DoKi!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="说到爬虫，自然而然就会想到，额，瓢虫？但是我想写的不是这个东西，我指的是网络中的“爬虫”，就是高中信息技术课里面提了几次的搜索引擎用的那个爬虫。
+印象中高中老师是这么介绍爬虫的：将网络看成由网页作为节点互相连成的一张网，将爬虫放在其中一个节点上，它就会自己去爬其他的节点。这个描述很生动，但也很抽象。网络为什么可以看成由网页作为节点连成的网？怎么把爬虫放在其中一个节点上？爬虫是怎么“爬”其他节点的？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="稍微扯一扯我学到的爬虫知识">
+<meta property="og:url" content="http://hugepi.github.io/2015/11/16/summarize/index.html">
+<meta property="og:site_name" content="DoKi DoKi!">
+<meta property="og:description" content="说到爬虫，自然而然就会想到，额，瓢虫？但是我想写的不是这个东西，我指的是网络中的“爬虫”，就是高中信息技术课里面提了几次的搜索引擎用的那个爬虫。
+印象中高中老师是这么介绍爬虫的：将网络看成由网页作为节点互相连成的一张网，将爬虫放在其中一个节点上，它就会自己去爬其他的节点。这个描述很生动，但也很抽象。网络为什么可以看成由网页作为节点连成的网？怎么把爬虫放在其中一个节点上？爬虫是怎么“爬”其他节点的？">
+<meta property="og:updated_time" content="2015-11-16T13:52:42.598Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="稍微扯一扯我学到的爬虫知识">
+<meta name="twitter:description" content="说到爬虫，自然而然就会想到，额，瓢虫？但是我想写的不是这个东西，我指的是网络中的“爬虫”，就是高中信息技术课里面提了几次的搜索引擎用的那个爬虫。
+印象中高中老师是这么介绍爬虫的：将网络看成由网页作为节点互相连成的一张网，将爬虫放在其中一个节点上，它就会自己去爬其他的节点。这个描述很生动，但也很抽象。网络为什么可以看成由网页作为节点连成的网？怎么把爬虫放在其中一个节点上？爬虫是怎么“爬”其他节点的？">
+  
+    <link rel="alternative" href="/atom.xml" title="DoKi DoKi!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">DoKi DoKi!</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hugepi.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-summarize" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/16/summarize/" class="article-date">
+  <time datetime="2015-11-16T13:40:28.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      稍微扯一扯我学到的爬虫知识
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>说到爬虫，自然而然就会想到，额，瓢虫？但是我想写的不是这个东西，我指的是网络中的“爬虫”，就是高中信息技术课里面提了几次的搜索引擎用的那个爬虫。</p>
+<p>印象中高中老师是这么介绍爬虫的：将网络看成由网页作为节点互相连成的一张网，将爬虫放在其中一个节点上，它就会自己去爬其他的节点。这个描述很生动，但也很抽象。网络为什么可以看成由网页作为节点连成的网？怎么把爬虫放在其中一个节点上？爬虫是怎么“爬”其他节点的？这些问题当时的我无法解答，网上的资料也看不懂。但在逐渐了解了些许前端的知识之后，再回过头去看，我开始渐渐理解爬虫了。<br><a id="more"></a><br>网络为什么可以看成由网页作为节点连成的网？网页是一个包含了大量信息文件。你在浏览器看到的网页只是网页的最终形态，网页本来是一段由远程服务器返回的代码，浏览器对这段代码施加了神奇的魔法之后，才变成了我们在显示屏上看到的各式各样的网页。回忆一下，你在浏览网页的时候如何从一个页面跳转到另一个页面？将鼠标放到超链接上，单击左键，就转到了一个新页面。为什么可以这样？因为网页中包含了指向另一个页面的信息：另一个网页的URL。这些URL并不出现在渲染好的页面上，它们包含在描述网页的代码中。如果一个页面包含了另外页面的URL，那么我们就可以从这个页面访问页面中包含的URL指向的页面。现在，将页面看成节点，节点之间的连线就是不同页面中包含的URL产生的相互联系。网络这张网在这个层面上就构建起来了。</p>
+<p>现在来讲讲爬虫，爬虫是什么？爬虫就是能访问网页的工具，只不过这个工具在访问网页的基础上做了更多的事情：从获取的网页提取信息，批量的获取网页，存储获取的网页等等。</p>
+<p>爬虫是如何“爬”其他节点的？首先，让我们来了解一下我们是怎么浏览网页的：当我们浏览网页的时候，我们在浏览器的地址栏中输入URL（比如www.baidu.com），按下回车，如果你家网速不错，电脑也不是30年前买的，那么百度的搜索框应该会“唰”地出现。这个现象到底是怎么发生的呢？在我们按下回车之后，我们的浏览器便开始发送请求，首先，它会去和一个叫DNS的东西问好：DNS君，请问这个URL对应的IP是多少？如果DNS君心情好，那么它就会告诉服务器：这个URL对应的IP啊，是XXX.XXX.XXX.XXX。浏览器在收到URL对应的IP之后，它就开始和服务器通过网络交流：服务器君，我想要这个页面（浏览器递上了有关页面的描述），你能不能给我把这个页面的文件发到我的电脑上？如果服务器君心情好，网络状况也不差，那么没过多久，浏览器就会收到来自服务器的回应：好的，我收到了你的请求，以下是你想要的内容（服务器捧出了一堆和页面相关的文件并发了出去）。浏览器收到了文件之后就断开了和服务器的链接，开始哼哧哈赤地解析页面，没过多久，网页就呈现在了屏幕上。过程大致就是这样，爬虫做的事情其实和浏览器类似，不同的是爬虫对于网页文件的解析方法比浏览器简单。浏览器要做一件爬虫并不会做的很重要的事情：渲染，即将网页和各式各样的资源结合起来，将网页代码中描述的页面的样子完整地呈现。相比之下，爬虫做的事情简单多了：它看一下获得的html文件，找一找自己想要的信息，记录下来，如果它累了，它就停下了，如果它有兴致，那么就提取出页面中的URL，开始访问新的页面，重复之前做的事情。从一个页面中找到其他页面的URL，访问这些URL对应的页面然后提取信息，这就是“爬”的真谛！</p>
+<p>如何将爬虫放在网络中的一个节点上？很简单，这就是一个给爬虫设置第一个要爬的页面的过程，指定一个URL就可以。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hugepi.github.io/2015/11/16/summarize/" data-id="cih202wk200010wqbws7ozr88" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/15/001/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">闲言碎语#001</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/11/16/summarize/">稍微扯一扯我学到的爬虫知识</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/001/">闲言碎语#001</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/10/000/">闲言碎语#000</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Huge Pi<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

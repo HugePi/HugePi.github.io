@@ -1,37 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[名字以后想吧]]></title>
+  <title><![CDATA[DoKi DoKi!]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://HugePi.github.io/"/>
-  <updated>2015-11-10T09:36:31.193Z</updated>
-  <id>http://HugePi.github.io/</id>
+  <link href="http://hugepi.github.io/"/>
+  <updated>2015-11-16T13:52:42.598Z</updated>
+  <id>http://hugepi.github.io/</id>
   
   <author>
-    <name><![CDATA[HugePi]]></name>
+    <name><![CDATA[Huge Pi]]></name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://HugePi.github.io/2015/11/10/hello-world/"/>
-    <id>http://HugePi.github.io/2015/11/10/hello-world/</id>
-    <published>2015-11-10T09:49:02.941Z</published>
-    <updated>2015-11-10T09:36:31.193Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <title><![CDATA[稍微扯一扯我学到的爬虫知识]]></title>
+    <link href="http://hugepi.github.io/2015/11/16/summarize/"/>
+    <id>http://hugepi.github.io/2015/11/16/summarize/</id>
+    <published>2015-11-16T13:40:28.000Z</published>
+    <updated>2015-11-16T13:52:42.598Z</updated>
+    <content type="html"><![CDATA[<p>说到爬虫，自然而然就会想到，额，瓢虫？但是我想写的不是这个东西，我指的是网络中的“爬虫”，就是高中信息技术课里面提了几次的搜索引擎用的那个爬虫。</p>
+<p>印象中高中老师是这么介绍爬虫的：将网络看成由网页作为节点互相连成的一张网，将爬虫放在其中一个节点上，它就会自己去爬其他的节点。这个描述很生动，但也很抽象。网络为什么可以看成由网页作为节点连成的网？怎么把爬虫放在其中一个节点上？爬虫是怎么“爬”其他节点的？这些问题当时的我无法解答，网上的资料也看不懂。但在逐渐了解了些许前端的知识之后，再回过头去看，我开始渐渐理解爬虫了。<br><a id="more"></a><br>网络为什么可以看成由网页作为节点连成的网？网页是一个包含了大量信息文件。你在浏览器看到的网页只是网页的最终形态，网页本来是一段由远程服务器返回的代码，浏览器对这段代码施加了神奇的魔法之后，才变成了我们在显示屏上看到的各式各样的网页。回忆一下，你在浏览网页的时候如何从一个页面跳转到另一个页面？将鼠标放到超链接上，单击左键，就转到了一个新页面。为什么可以这样？因为网页中包含了指向另一个页面的信息：另一个网页的URL。这些URL并不出现在渲染好的页面上，它们包含在描述网页的代码中。如果一个页面包含了另外页面的URL，那么我们就可以从这个页面访问页面中包含的URL指向的页面。现在，将页面看成节点，节点之间的连线就是不同页面中包含的URL产生的相互联系。网络这张网在这个层面上就构建起来了。</p>
+<p>现在来讲讲爬虫，爬虫是什么？爬虫就是能访问网页的工具，只不过这个工具在访问网页的基础上做了更多的事情：从获取的网页提取信息，批量的获取网页，存储获取的网页等等。</p>
+<p>爬虫是如何“爬”其他节点的？首先，让我们来了解一下我们是怎么浏览网页的：当我们浏览网页的时候，我们在浏览器的地址栏中输入URL（比如www.baidu.com），按下回车，如果你家网速不错，电脑也不是30年前买的，那么百度的搜索框应该会“唰”地出现。这个现象到底是怎么发生的呢？在我们按下回车之后，我们的浏览器便开始发送请求，首先，它会去和一个叫DNS的东西问好：DNS君，请问这个URL对应的IP是多少？如果DNS君心情好，那么它就会告诉服务器：这个URL对应的IP啊，是XXX.XXX.XXX.XXX。浏览器在收到URL对应的IP之后，它就开始和服务器通过网络交流：服务器君，我想要这个页面（浏览器递上了有关页面的描述），你能不能给我把这个页面的文件发到我的电脑上？如果服务器君心情好，网络状况也不差，那么没过多久，浏览器就会收到来自服务器的回应：好的，我收到了你的请求，以下是你想要的内容（服务器捧出了一堆和页面相关的文件并发了出去）。浏览器收到了文件之后就断开了和服务器的链接，开始哼哧哈赤地解析页面，没过多久，网页就呈现在了屏幕上。过程大致就是这样，爬虫做的事情其实和浏览器类似，不同的是爬虫对于网页文件的解析方法比浏览器简单。浏览器要做一件爬虫并不会做的很重要的事情：渲染，即将网页和各式各样的资源结合起来，将网页代码中描述的页面的样子完整地呈现。相比之下，爬虫做的事情简单多了：它看一下获得的html文件，找一找自己想要的信息，记录下来，如果它累了，它就停下了，如果它有兴致，那么就提取出页面中的URL，开始访问新的页面，重复之前做的事情。从一个页面中找到其他页面的URL，访问这些URL对应的页面然后提取信息，这就是“爬”的真谛！</p>
+<p>如何将爬虫放在网络中的一个节点上？很简单，这就是一个给爬虫设置第一个要爬的页面的过程，指定一个URL就可以。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    <![CDATA[<p>说到爬虫，自然而然就会想到，额，瓢虫？但是我想写的不是这个东西，我指的是网络中的“爬虫”，就是高中信息技术课里面提了几次的搜索引擎用的那个爬虫。</p>
+<p>印象中高中老师是这么介绍爬虫的：将网络看成由网页作为节点互相连成的一张网，将爬虫放在其中一个节点上，它就会自己去爬其他的节点。这个描述很生动，但也很抽象。网络为什么可以看成由网页作为节点连成的网？怎么把爬虫放在其中一个节点上？爬虫是怎么“爬”其他节点的？这些问题当时的我无法解答，网上的资料也看不懂。但在逐渐了解了些许前端的知识之后，再回过头去看，我开始渐渐理解爬虫了。<br>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[闲言碎语#001]]></title>
+    <link href="http://hugepi.github.io/2015/11/15/001/"/>
+    <id>http://hugepi.github.io/2015/11/15/001/</id>
+    <published>2015-11-15T14:15:07.000Z</published>
+    <updated>2015-11-16T13:50:14.859Z</updated>
+    <content type="html"><![CDATA[<p>依然是被自己的兴趣爱好耍的团团转，做了很多事但又不怎么长进的一星期。做到了一天看一篇TED（虽然好多内容都没有完全理解）；撸了ARM，找到了感觉；尝试了git，终于小填了一下历史遗留大坑。翻了翻《GEB》，终于能体会其中的思想，“旁路效应”四个字印象深刻。偶遇《不想讨好全世界》，作为一本鸡汤，我给他满分。星期六买了本三联生活，爱因斯坦和相对论，奇妙的组合，看看科普文的感觉十分舒爽（瞬间暴露智商）。</p>
+<p>说说这星期获得的各种教训：第一个是做事还是要仔细，尤其是看文档，看示例代码，那真是漏一行毁一生。。。第二个是要把执行力锻炼起来，第三个是，身边有大腿要时不时去蹭蹭，被带飞的感觉真好。<br><a id="more"></a><br>教训说完了，我觉得文章也该结束了，但是请容许我再花一段时间假装爱思考。这星期对于抽象的思考更多了，抽象或许是人类最究极的武器吧。从具体到抽象，多么奇迹的一个过程，我们的祖先们在某一时刻发明了语言，各种现象被浓缩在了一个个的单词中；在发明了语言之后，有了记号，人类得以将语言记录下来，形成文字，与此同时，“数”的概念也逐渐产生；爱因斯坦在思考“人下落时感觉不到重力”的时候获得了启发，由此创造了广义相对论；人们对电路的抽象产生了电路图这种对于电路的描述方式；CS大牛们将计算过程抽象产生了程序语言。很难想象，没有抽象，我们会如何面对这个世界。有了抽象，我们才能从更宏观的意义上理解世界，有了抽象，我们才能创造各个领域的突破。抽象给我们带来了巨大的便利，但同时也为后人的理解带来了巨大的困难（让我们先不要管天才们）。抽象的层级越高，人们构建概念所需的成本约高，于是产生了思想传播的困难。而且很多时候我们并没有认识到我们学习的是抽象方法，一些精妙的思维隐藏在了书本的文字中，唯有仔细琢磨方能理解其真意。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>依然是被自己的兴趣爱好耍的团团转，做了很多事但又不怎么长进的一星期。做到了一天看一篇TED（虽然好多内容都没有完全理解）；撸了ARM，找到了感觉；尝试了git，终于小填了一下历史遗留大坑。翻了翻《GEB》，终于能体会其中的思想，“旁路效应”四个字印象深刻。偶遇《不想讨好全世界》，作为一本鸡汤，我给他满分。星期六买了本三联生活，爱因斯坦和相对论，奇妙的组合，看看科普文的感觉十分舒爽（瞬间暴露智商）。</p>
+<p>说说这星期获得的各种教训：第一个是做事还是要仔细，尤其是看文档，看示例代码，那真是漏一行毁一生。。。第二个是要把执行力锻炼起来，第三个是，身边有大腿要时不时去蹭蹭，被带飞的感觉真好。<br>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[闲言碎语#000]]></title>
+    <link href="http://hugepi.github.io/2015/11/10/000/"/>
+    <id>http://hugepi.github.io/2015/11/10/000/</id>
+    <published>2015-11-10T13:12:14.000Z</published>
+    <updated>2015-11-16T13:51:03.110Z</updated>
+    <content type="html"><![CDATA[<p>能有一个自己的博客是我一直以来的愿望，今天，我终于亲手把它实现了，现在九点十八分，我正后悔刚才没有早点洗澡。<br><a id="more"></a><br>第一篇文章，对我来说，总是有点特殊，希望最后写出来能有不错的内容。（我就知道我又想多了）</p>
+<p>首先还是记录一点搭博客的心得吧！git page方面的东西我先放着了（因为忘记了自己操作的具体步骤了/趴桌），那么来说说hexo这个框架的坑吧，这个框架，让我觉得麻烦的一点是：需要在git shell里利用npm来安装各种插件。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-renderer-ejs <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">index</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">archive</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">category</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-tag <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-deployer-heroku <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-deployer-rsync <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-deployer-openshift <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-marked <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-stylus <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<p>装了这些之后再调用hexo g就可以生成一个正常的网页。</p>
+<p>很多人写博客的目的是：作为输出自己知识的容器。但我搭这个博客一开始并没有非常明确自己的目的。一个博客能让我做很多事情，我可以在玩博客的时候了解前端，可以锻炼自己的写作能力。但是最后的结果如何，不得而知。</p>
+<p>这几天一直在做很早就想做的事情，比如重新开始写scrapy，比如重新开始了解github。。。进度不快，收获不少。思考能力的欠缺，知识面的匮乏，获取信息的困难，这三点是我目前最在意的三个短板，希望能在以后逐渐弥补起来。由于低效，很多事情一旦开始做，就会波及到其他我想做的事情，这也是目前最困扰我的问题。</p>
+<p>想想过去，我已经获得了成就：“三分钟热度”*n。说实话，我对于维护这个博客并没有信心。但我还是希望这个博客能成为我大学生活里的一个节点，希望从这个节点开始，有些东西会逐步改变，变成本来该有的样子。（现在看这段话，觉得好矫情）</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>能有一个自己的博客是我一直以来的愿望，今天，我终于亲手把它实现了，现在九点十八分，我正后悔刚才没有早点洗澡。<br>]]>
+    
     </summary>
     
   </entry>
